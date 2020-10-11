@@ -1,0 +1,40 @@
+{% extends 'app/base.html' %}
+{% block title %}
+	<title>Buy Item {{item.id}}</title>
+{% endblock %}
+
+{% block content %}
+<div class='list__item'>
+	<h1>{{ item.name }}</h1>
+	<p>{{ item.description }}</p>
+	<p>{{ item.price }} рублей</p>
+	<button id="buy-button" class='buy-btn' onclick="buy({{item.id}}, itemCount)">Buy</button>
+	<div style="display:flex">
+	<button class='small-btn' onclick="addCounter()">+</button>
+	<p id='itemCount'></p>
+	<button class='small-btn' onclick="subCounter()">-</button>
+		</div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+	let itemCount = 1;
+	document.getElementById("itemCount").innerHTML = itemCount;
+	let buybutton=document.getElementById("itemCount")
+	
+
+	function addCounter() {
+		itemCount++;
+		document.getElementById("itemCount").innerHTML = itemCount;
+	}
+
+	function subCounter() {
+		if (itemCount!==1) {
+			itemCount--;
+			document.getElementById("itemCount").innerHTML = itemCount;
+		}
+	}
+	
+</script>
+{% endblock %}

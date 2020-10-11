@@ -1,0 +1,18 @@
+{% extends 'app/base.html' %}
+{% block content %}
+	  <div>
+		{% if item_list %}
+			<div class='list'>
+			{% for item in item_list %}
+				<div class='list__item'>
+					<h1><a href="/item/{{ item.id }}/">{{ item.name }}</a></h1>
+					<p>{{ item.description }}</p>
+					<p>{{ item.price }} рублей</p>
+				</div>
+			{% endfor %}
+			</div>
+		{% else %}
+			<p>No items are available.</p>
+		{% endif %}
+	</div>	
+ {% endblock %}

@@ -1,0 +1,20 @@
+{% load static %}
+<html>
+  <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'app/style.css' %}">
+	{% block title %}
+	<title>Items List</title>
+	{% endblock %}
+  </head>
+  <body>
+	<div class='layout'>
+		{% block content %}
+		{% endblock %}		
+	</div>
+	<script src="https://js.stripe.com/v3/"></script>
+	<script src="{% static 'main.js' %}"></script>
+	{% block script %}
+	{% endblock %}
+  </body>
+</html>

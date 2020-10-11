@@ -1,0 +1,79 @@
+body {
+	background-image: linear-gradient(to right top, #c4dcff, #bcd0ff, #bec1ff, #c9b0ff, #db9bff);
+}
+
+.layout {
+	max-width: 600px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+p {
+	color: #2b0044;
+}
+
+a {
+	color:#8200ce;
+	text-decoration: none;
+}
+
+a:-webkit-any-link:active {
+    color:#8200ce;
+}
+
+h1 {
+	color: #8200ce;
+	margin-top:0
+}
+
+button {
+	margin-top:10px;
+	background-color: #a300ff;
+	border-radius: 50%;
+	box-shadow: 0px 0px 40px -5px rgba(0,0,0,0.30);
+	border:none;
+	color:#DCEAFF;
+}
+
+button:hover{
+	background-color: #8200ce;
+	cursor: pointer;
+}
+
+button:focus{
+	outline: -webkit-focus-ring-color auto 0;
+}
+
+.buy-btn{
+	padding:10px;
+	width:100px;
+	border-radius: 20px;
+}
+
+.small-btn{
+	width: 25px;
+	height: 25px;
+	background-color: #bcd0ff;
+	color:#8200ce;
+	margin-right:10px;
+	margin-left:10px;
+}
+
+.small-btn:hover{
+	background-color: #bec1ff;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.list__item{
+	background: #DCEAFF;
+	margin: 20px;
+	padding: 50px;
+	border-radius: 20px;
+	box-shadow: 0px 0px 40px -5px rgba(0,0,0,0.30);
+	max-width: 500px;
+}
