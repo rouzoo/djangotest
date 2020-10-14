@@ -1,6 +1,6 @@
 {% extends 'app/base.html' %}
 {% block content %}
-	  <div>
+	<div>
 		{% if item_list %}
 			<div class='list'>
 			{% for item in item_list %}
@@ -8,11 +8,41 @@
 					<h1><a href="/item/{{ item.id }}/">{{ item.name }}</a></h1>
 					<p>{{ item.description }}</p>
 					<p>{{ item.price }} рублей</p>
+					<button id="buy-button" class='buy-btn' onclick="addToCart({{item.id}} , document.getElementById('count_{{item.id}}').innerHTML)">Add</button>
+				<div style="display:flex">
+					<button class='small-btn' onclick="addCounter({{item.id}})">+</button>
+					<p id='count_{{item.id}}'>1</p>
+					<button class='small-btn' onclick="subCounter({{item.id}})">-</button>
 				</div>
+		</div>
 			{% endfor %}
+			
 			</div>
 		{% else %}
 			<p>No items are available.</p>
 		{% endif %}
-	</div>	
+	</div>
+	<button id="checkout-button" class='buy-btn' onclick="checkout()">Checkout</button>
  {% endblock %}
+ {% block script %}
+<script>
+	let itemCount = 1;
+	//document.getElementById("count_").innerHTML = itemCount;
+	//let buybutton=document.getElementById("itemCount")
+	
+
+	function addCounter(id) {
+		itemCount = document.getElementById("count_"+id).innerHTML
+		document.getElementById("count_"+id).innerHTML= parseInt(itemCount)+1;
+	}
+
+	function subCounter(id) {
+		itemCount = document.getElementById("count_"+id).innerHTML
+		if (parseInt(itemCount) > 1) {
+			itemCount = document.getElementById("count_"+id).innerHTML
+			document.getElementById("count_"+id).innerHTML= parseInt(itemCount)-1;
+		}
+	}
+	
+</script>
+{% endblock %}
